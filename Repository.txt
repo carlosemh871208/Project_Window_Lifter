@@ -1,1 +1,5 @@
 Repository for Window Lifter project
+
+The best video for learning how to use githuh with tortoise
+
+https://www.youtube.com/watch?v=Uez1nDLvMEA
