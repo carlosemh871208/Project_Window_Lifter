@@ -9,7 +9,6 @@
 "./src/HAL/clock.o"
 "./src/HAL/IO.o"
 "./src/APP/windowlifter.o"
-"./include/MAL/lib_port.o"
 "./Project_Settings/Startup_Code/system_S32K144.o"
 "./Project_Settings/Startup_Code/startup_S32K144.o"
 "./Project_Settings/Startup_Code/startup.o"

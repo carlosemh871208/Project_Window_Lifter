@@ -41,12 +41,13 @@
 /*
  * $Log: filename.h  $
   ============================================================================*/
-#ifndef FILENAME_H
-#define FILENAME_H
+#ifndef HAL_DELAY_H_
+#define HAL_DELAY_H_
 
 /* Includes */
 /*============================================================================*/
 
+#include "MAL/lib_pcc.h"
 
 /* Constants and types */
 /*============================================================================*/
@@ -57,6 +58,12 @@
 
 
 /* Exported functions prototypes */
+
+void set_delay_us(T_ULONG t_uTime);
+void set_delay_ms(T_ULONG t_uTime);
+void set_delay_s(T_ULONG t_uTime);
+void delay_start(void);
+
 /*============================================================================*/
 
 #endif  /* Notice: the file ends with a blank new line to avoid compiler warnings */

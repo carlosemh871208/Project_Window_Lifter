@@ -4,7 +4,7 @@
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: main.c $
+ * $Source: wdog.c $
  * $Revision: version 1 $
  * $Author: Carlos $
  * $Date: 28/10/2017 $
@@ -12,7 +12,7 @@
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
 /** \file
-    Main function of window lifter project
+    Function of WDOG disable
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -31,18 +31,18 @@
 /*============================================================================*/
 /*        AUTHOR       |       VERSION      |           DESCRIPTION           */
 /*----------------------------------------------------------------------------*/
-/*                     |                    |                                 */
+/*        Carlos       |       Version 1    | Disable WDOG                    */
 /*============================================================================*/
 /*                               OBJECT HISTORY                               */
 /*============================================================================*/
 /*
- * $Log: filename.c  $
+ * $Log: wdog.c  $
   ============================================================================*/
 
 /* Includes */
 /*============================================================================*/
 
-
+#include "HAL/wdog.h"
 
 /* Constants and types  */
 /*============================================================================*/
@@ -67,12 +67,13 @@
 
 /* Private functions */
 /*============================================================================*/
-/** Check if action is allowed by overload protection.
- To avoid overheating of the door locking motors and hardware failure
- the software shall limit the number of activations in a short period.
- This function checks if the limitation algorithm allows or not
- a certain activation of the motors.
- \returns TRUE if the activation is allowed, FALSE if not
-*/
+
+
+
 /* Exported functions */
+
+void WDOG_DISABLE(){
+	DISABLE_WDOG();
+}
+
 /*============================================================================*/

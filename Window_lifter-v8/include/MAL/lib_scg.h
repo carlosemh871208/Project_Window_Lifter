@@ -4,7 +4,7 @@
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: lib_wdog.h $
+ * $Source: lib_scg.h $
  * $Revision: version 1 $
  * $Author: Carlos $
  * $Date: 28/10/2017 $
@@ -12,10 +12,7 @@
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
 /** \file
-    short description in one sentence end with dot.
-    detailed
-    multiline
-    description of the file
+    Describes functions of lib_scg.c
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -34,19 +31,21 @@
 /*============================================================================*/
 /*        AUTHOR       |       VERSION      |           DESCRIPTION           */
 /*----------------------------------------------------------------------------*/
-/*                     |                    |                                 */
+/*        Carlos       |       Version 1    | DEscribes lib_scg.c functions   */
 /*============================================================================*/
 /*                               OBJECT HISTORY                               */
 /*============================================================================*/
 /*
- * $Log: filename.h  $
+ * $Log: lib_scg.h  $
   ============================================================================*/
-#ifndef FILENAME_H
-#define FILENAME_H
+#ifndef MAL_LIB_SCG_H_
+#define MAL_LIB_SCG_H_
 
 /* Includes */
 /*============================================================================*/
 
+#include "S32K144.h"
+#include "MAL/def_lib.h"
 
 /* Constants and types */
 /*============================================================================*/
@@ -57,6 +56,11 @@
 
 
 /* Exported functions prototypes */
+
+void SOSC_INIT_8MHZ();
+void SPLL_INIT_160MHZ();
+void NORMAL_RUN_MODE_80MHZ();
+
 /*============================================================================*/
 
 #endif  /* Notice: the file ends with a blank new line to avoid compiler warnings */

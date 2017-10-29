@@ -4,15 +4,15 @@
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: main.c $
+ * $Source: lib_port.c $
  * $Revision: version 1 $
  * $Author: Carlos $
- * $Date: 28/10/2017 $
+ * $Date: 29/10/2017 $
  */
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
 /** \file
-    Main function of window lifter project
+    Setting parameters of PORT registers
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -31,18 +31,18 @@
 /*============================================================================*/
 /*        AUTHOR       |       VERSION      |           DESCRIPTION           */
 /*----------------------------------------------------------------------------*/
-/*                     |                    |                                 */
+/*        Carlos       |       Version 1    | Setting parameters of PORT      */
 /*============================================================================*/
 /*                               OBJECT HISTORY                               */
 /*============================================================================*/
 /*
- * $Log: filename.c  $
+ * $Log: lib_port.c  $
   ============================================================================*/
 
 /* Includes */
 /*============================================================================*/
 
-
+#include "MAL/lib_port.h"
 
 /* Constants and types  */
 /*============================================================================*/
@@ -75,4 +75,25 @@
  \returns TRUE if the activation is allowed, FALSE if not
 */
 /* Exported functions */
+
+/*void set_PORTA(T_ULONG PIN,T_ULONG DIR){
+	PORTA->PCR[PIN]=DIR;
+}*/
+
+void set_PORTB(T_ULONG PIN,T_ULONG DIR){
+	PORTB->PCR[PIN]=DIR;
+}
+
+void set_PORTC(T_ULONG PIN,T_ULONG DIR){
+	PORTC->PCR[PIN]=DIR;
+}
+
+void set_PORTD(T_ULONG PIN,T_ULONG DIR){
+	PORTD->PCR[PIN]=DIR;
+}
+
+void set_PORTE(T_ULONG PIN,T_ULONG DIR){
+	PORTE->PCR[PIN]=DIR;
+}
+
 /*============================================================================*/

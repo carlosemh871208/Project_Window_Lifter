@@ -52,7 +52,6 @@ C_DEPS :=
 SUBDIRS := \
 Project_Settings/Linker_Files \
 Project_Settings/Startup_Code \
-include/MAL \
 src/APP \
 src/HAL \
 src/MAL \

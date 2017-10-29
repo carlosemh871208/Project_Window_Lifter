@@ -4,7 +4,7 @@
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: main.c $
+ * $Source: delay.c $
  * $Revision: version 1 $
  * $Author: Carlos $
  * $Date: 28/10/2017 $
@@ -12,7 +12,7 @@
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
 /** \file
-    Main function of window lifter project
+   Set LPIT registers
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -31,18 +31,18 @@
 /*============================================================================*/
 /*        AUTHOR       |       VERSION      |           DESCRIPTION           */
 /*----------------------------------------------------------------------------*/
-/*                     |                    |                                 */
+/*        Carlos       |       Version 1    |  Set lpit registers             */
 /*============================================================================*/
 /*                               OBJECT HISTORY                               */
 /*============================================================================*/
 /*
- * $Log: filename.c  $
+ * $Log: delay.c  $
   ============================================================================*/
 
 /* Includes */
 /*============================================================================*/
 
-
+#include "HAL/delay.h"
 
 /* Constants and types  */
 /*============================================================================*/
@@ -67,13 +67,39 @@
 
 /* Private functions */
 /*============================================================================*/
-/** Check if action is allowed by overload protection.
- To avoid overheating of the door locking motors and hardware failure
- the software shall limit the number of activations in a short period.
- This function checks if the limitation algorithm allows or not
- a certain activation of the motors.
- \returns TRUE if the activation is allowed, FALSE if not
-*/
+
+
 /* Exported functions */
+
+void set_delay_us(T_ULONG t_uTime){
+	PCC->PCCn[PCC_LPIT_INDEX] = PCC_PCCn_PCS(6);
+	PCC->PCCn[PCC_LPIT_INDEX] |= PCC_PCCn_CGC_MASK;
+	LPIT0->MCR = 0x00000001;
+	LPIT0->TMR[0].TVAL = 40*t_uTime;
+	LPIT0->TMR[0].TCTRL = 0x00000001;
+}
+
+void set_delay_ms(T_ULONG t_uTime){
+	PCC->PCCn[PCC_LPIT_INDEX] = PCC_PCCn_PCS(6);
+	PCC->PCCn[PCC_LPIT_INDEX] |= PCC_PCCn_CGC_MASK;
+	LPIT0->MCR = 0x00000001;
+	LPIT0->TMR[0].TVAL = 40000*t_uTime;
+	LPIT0->TMR[0].TCTRL = 0x00000001;
+}
+
+void set_delay_s(T_ULONG t_uTime){
+	PCC->PCCn[PCC_LPIT_INDEX] = PCC_PCCn_PCS(6);
+	PCC->PCCn[PCC_LPIT_INDEX] |= PCC_PCCn_CGC_MASK;
+	LPIT0->MCR = 0x00000001;
+	LPIT0->TMR[0].TVAL = 40000000*t_uTime;
+	LPIT0->TMR[0].TCTRL = 0x00000001;
+}
+
+void delay_start(void){
+	while(0 == (LPIT0->MSR & LPIT_MSR_TIF0_MASK)){}
+	LPIT0->MSR |= LPIT_MSR_TIF0_MASK;
+}
+
+
 /*============================================================================*/
 

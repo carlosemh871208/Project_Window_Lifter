@@ -4,7 +4,7 @@
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: lib_wdog.h $
+ * $Source: lib_port.h $
  * $Revision: version 1 $
  * $Author: Carlos $
  * $Date: 28/10/2017 $
@@ -12,10 +12,7 @@
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
 /** \file
-    short description in one sentence end with dot.
-    detailed
-    multiline
-    description of the file
+    COnfigures lib_port.c functions
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -34,19 +31,21 @@
 /*============================================================================*/
 /*        AUTHOR       |       VERSION      |           DESCRIPTION           */
 /*----------------------------------------------------------------------------*/
-/*                     |                    |                                 */
+/*        Carlos       |       Version 1    | Describes lib_port.c functions  */
 /*============================================================================*/
 /*                               OBJECT HISTORY                               */
 /*============================================================================*/
 /*
  * $Log: filename.h  $
   ============================================================================*/
-#ifndef FILENAME_H
-#define FILENAME_H
+#ifndef MAL_LIB_PORT_H_
+#define MAL_LIB_PORT_H_
 
 /* Includes */
 /*============================================================================*/
 
+#include "S32K144.h"
+#include "MAL/def_lib.h"
 
 /* Constants and types */
 /*============================================================================*/
@@ -57,6 +56,12 @@
 
 
 /* Exported functions prototypes */
+
+void set_PORTB(T_ULONG PIN,T_ULONG DIR);
+void set_PORTC(T_ULONG PIN,T_ULONG DIR);
+void set_PORTD(T_ULONG PIN,T_ULONG DIR);
+void set_PORTE(T_ULONG PIN,T_ULONG DIR);
+
 /*============================================================================*/
 
 #endif  /* Notice: the file ends with a blank new line to avoid compiler warnings */

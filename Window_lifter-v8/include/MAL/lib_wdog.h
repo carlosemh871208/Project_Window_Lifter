@@ -12,10 +12,7 @@
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
 /** \file
-    short description in one sentence end with dot.
-    detailed
-    multiline
-    description of the file
+    Describes lib_wdog.c function
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -34,19 +31,21 @@
 /*============================================================================*/
 /*        AUTHOR       |       VERSION      |           DESCRIPTION           */
 /*----------------------------------------------------------------------------*/
-/*                     |                    |                                 */
+/*        Carlos       |       Version 1    |  Describe lib_wdog.c function   */
 /*============================================================================*/
 /*                               OBJECT HISTORY                               */
 /*============================================================================*/
 /*
- * $Log: filename.h  $
+ * $Log: lib_wdog.h  $
   ============================================================================*/
-#ifndef FILENAME_H
-#define FILENAME_H
+#ifndef MAL_LIB_WDOG_H_
+#define MAL_LIB_WDOG_H_
 
 /* Includes */
 /*============================================================================*/
 
+#include "S32K144.h"
+#include "MAL/def_lib.h"
 
 /* Constants and types */
 /*============================================================================*/
@@ -57,6 +56,9 @@
 
 
 /* Exported functions prototypes */
+
+void DISABLE_WDOG();
+
 /*============================================================================*/
 
 #endif  /* Notice: the file ends with a blank new line to avoid compiler warnings */

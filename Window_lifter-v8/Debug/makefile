@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-#Progress monitor hint: 15
+#Progress monitor hint: 14
 first : all
 -include ../makefile.init
 
@@ -16,7 +16,6 @@ RM := rm -rf
 -include subdir.mk
 -include Project_Settings/Linker_Files/subdir.mk
 -include Project_Settings/Startup_Code/subdir.mk
--include include/MAL/subdir.mk
 -include src/APP/subdir.mk
 -include src/HAL/subdir.mk
 -include src/MAL/subdir.mk
@@ -57,14 +56,14 @@ all: warning-messages explicit-dependencies Window_lifter-v8.elf secondary-outpu
 # Tool invocations
 Window_lifter-v8.elf: $(OBJS) C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Window_lifter-v8/Project_Settings/Linker_Files/S32K1xx_flash.ld $(USER_OBJS)
 	@echo 'Building target: $@'
-	@echo 'Executing target #16 $@'
+	@echo 'Executing target #15 $@'
 	@echo 'Invoking: Standard S32DS C Linker'
 	arm-none-eabi-gcc -o "Window_lifter-v8.elf" "@Window_lifter-v8.args"  $(USER_OBJS_QUOTED) $(LIBS_QUOTED)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 Window_lifter-v8.siz: $(EXECUTABLES)
-	@echo 'Executing target #17 $@'
+	@echo 'Executing target #16 $@'
 	@echo 'Invoking: Standard S32DS Print Size'
 	arm-none-eabi-size --format=berkeley $(EXECUTABLES)
 	@echo 'Finished building: $@'

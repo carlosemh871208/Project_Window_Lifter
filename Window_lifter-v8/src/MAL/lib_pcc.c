@@ -4,15 +4,15 @@
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: main.c $
+ * $Source: lib_pcc.c $
  * $Revision: version 1 $
  * $Author: Carlos $
- * $Date: 28/10/2017 $
+ * $Date: 29/10/2017 $
  */
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
 /** \file
-    Main function of window lifter project
+    Setting registers of PCC
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -31,7 +31,7 @@
 /*============================================================================*/
 /*        AUTHOR       |       VERSION      |           DESCRIPTION           */
 /*----------------------------------------------------------------------------*/
-/*                     |                    |                                 */
+/*        Carlos       |       Version 1    |   Library of PCC registers      */
 /*============================================================================*/
 /*                               OBJECT HISTORY                               */
 /*============================================================================*/
@@ -41,7 +41,7 @@
 
 /* Includes */
 /*============================================================================*/
-
+#include "MAL/lib_pcc.h"
 
 
 /* Constants and types  */
@@ -67,12 +67,33 @@
 
 /* Private functions */
 /*============================================================================*/
-/** Check if action is allowed by overload protection.
- To avoid overheating of the door locking motors and hardware failure
- the software shall limit the number of activations in a short period.
- This function checks if the limitation algorithm allows or not
- a certain activation of the motors.
- \returns TRUE if the activation is allowed, FALSE if not
-*/
+
+
 /* Exported functions */
+
+/*void enable_PCC_PORTA(void){
+	PCC->PCCn[PCC_PORTA_INDEX]=0x40000000u;
+}*/
+
+void enable_PCC_PORTB(void){
+	PCC->PCCn[PCC_PORTB_INDEX]=0x40000000u;
+}
+
+void enable_PCC_PORTC(void){
+	PCC->PCCn[PCC_PORTC_INDEX]=0x40000000u;
+}
+
+void enable_PCC_PORTD(void){
+	PCC->PCCn[PCC_PORTD_INDEX]=0x40000000u;
+}
+
+void enable_PCC_PORTE(void){
+	PCC->PCCn[PCC_PORTE_INDEX]=0x40000000u;
+}
+
+void enable_PCC_LPIT(void){
+	PCC->PCCn[PCC_LPIT_INDEX]=PCC_PCCn_PCS(6);
+	PCC->PCCn[PCC_LPIT_INDEX]=0x40000000u;
+}
+
 /*============================================================================*/

@@ -30,7 +30,7 @@ C_DEPS += \
 # Each subdirectory must supply rules for building sources it contributes
 src/APP/windowlifter.o: ../src/APP/windowlifter.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #5 $<'
+	@echo 'Executing target #4 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
 	arm-none-eabi-gcc "@src/APP/windowlifter.args" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "src/APP/windowlifter.o" "$<"
 	@echo 'Finished building: $<'

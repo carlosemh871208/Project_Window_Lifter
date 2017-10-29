@@ -4,7 +4,7 @@
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: lib_wdog.h $
+ * $Source: def_lib.h $
  * $Revision: version 1 $
  * $Author: Carlos $
  * $Date: 28/10/2017 $
@@ -12,10 +12,7 @@
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
 /** \file
-    short description in one sentence end with dot.
-    detailed
-    multiline
-    description of the file
+    Definition of new types
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -34,15 +31,15 @@
 /*============================================================================*/
 /*        AUTHOR       |       VERSION      |           DESCRIPTION           */
 /*----------------------------------------------------------------------------*/
-/*                     |                    |                                 */
+/*        Carlos       |       Version 1    | Definition of new types         */
 /*============================================================================*/
 /*                               OBJECT HISTORY                               */
 /*============================================================================*/
 /*
- * $Log: filename.h  $
+ * $Log: def_lib.h  $
   ============================================================================*/
-#ifndef FILENAME_H
-#define FILENAME_H
+#ifndef MAL_DEF_LIB_H_
+#define MAL_DEF_LIB_H_
 
 /* Includes */
 /*============================================================================*/
@@ -51,6 +48,10 @@
 /* Constants and types */
 /*============================================================================*/
 
+#define NULL ((void*)0ul)
+
+typedef unsigned char T_UBYTE;
+typedef unsigned long T_ULONG;
 
 /* Exported Variables */
 /*============================================================================*/
